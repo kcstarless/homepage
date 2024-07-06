@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --font-family-sans: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --line-height-headers: 1.1;
+  --line-height-body: 1.5;
+  --font-size-xs: 0.75rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-xxxl: 2rem;
+  --font-size-xxxxl: 2.5rem;
+  --color-text-header: hsl(0, 1%, 16%);
+  --color-text-body: hsl(0, 5%, 25%);
+  --color-text-muted: hsl(0, 1%, 44%);
+  --space-xxxs: 0.25rem;
+  --space-xxs: 0.375rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 2.5rem;
+  --space-xxxl: 3rem;
+  --space-xxxxl: 4rem;
+  --color-primary: hsl(350, 67%, 50%);
+  --color-primary-rotate: hsl(10, 73%, 54%);
+  --color-primary-bg: hsl(0, 85%, 96%);
+  --color-secondary: hsl(101, 45%, 56%);
+  --color-secondary-rotate: hsl(120, 45%, 56%);
+  --color-tertiary: hsl(49, 89%, 64%);
+  --color-glint: hsl(210, 100%, 82%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-background: hsl(30, 50%, 98%);
+  --color-light: hsl(0, 6%, 93%);
+  --color-dark: var(--color-text-header);
+  --color-outter: hsl(0, 70%, 39%);
+  --color-inner: hsl(118, 63%, 31%);
+  --border-radius: 0.375rem;
+  --border: solid 2px var(--color-dark);
+  --border-outter: solid 2px var(--color-outter);
+  --border-inner: solid 2px var(--color-inner);
+  --shadow-large: 2px 4px 10px hsl(0 0% 0% / 0.1);
+  --shadow-small: 1px 3px 6px hsl(0 0% 0% / 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-sans);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-header);
+  line-height: var(--line-height-headers);
+}
+
+h1 {
+  font-size: var(--font-size-xxxl);
+}
+
+h2 {
+  font-size: var(--font-size-xxl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+h4 {
+  font-size: var(--font-size-l);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 200ms;
+}
+a:hover, a:focus, a:active {
+  color: var(--color-primary-rotate);
+}
+
+.header {
+  margin: var(--space-xl);
+}
+
+.contactme {
+  background-color: var(--color-glint);
+  display: grid;
+  grid-template-columns: 1r;
+  color: var(--color-white);
+}
+.contactme h2 {
+  color: var(--color-white);
+}
+.contactme .contact_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--space-xl);
+}
+.contactme .social_connect {
+  display: inline-flex;
+  gap: var(--space-s);
+}
+.contactme .contact_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+.contactme ul {
+  list-style-type: none;
+  padding: 0;
+}
+.contactme ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-l);
+}
+.contactme ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.contactme ul li a:hover, .contactme ul li a:focus, .contactme ul li a:active {
+  color: var(--color-primary-rotate);
+}
+@media (min-width: 37.5rem) and (max-width: 64rem) {
+  .contactme {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+}
+@media (min-width: 64rem) {
+  .contactme {
+    grid-template-columns: repeat(2, 1fr); /* Three columns for desktops */
+  }
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(180deg, var(--color-glint) 50%, var(--color-background) 60%) no-repeat;
+  background-position: top left; /* Adjust the starting position of the gradient */
+  background-size: 100% 30%; /* Adjust the size of the gradient to occupy more of the top */
+  transition: ease;
+}
+@media (min-width: 37rem) {
+  .container {
+    max-width: 90rem;
+  }
+}
+@media (min-width: 37rem) and (max-width: 60rem) {
+  .container {
+    background: linear-gradient(180deg, var(--color-glint) 50%, var(--color-background) 60%) no-repeat;
+    background-size: 100% 40%;
+    transition: ease;
+  }
+}
+@media (min-width: 60rem) {
+  .container {
+    background: linear-gradient(180deg, var(--color-glint) 50%, var(--color-background) 60%) no-repeat;
+    background-size: 100% 50%;
+    transition: ease;
+  }
+}
+
+.content {
+  padding: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content .subheader {
+  padding-bottom: var(--space-m);
+}
+.content .mywork {
+  display: grid;
+  gap: var(--space-l);
+  grid-template-columns: repeat(1);
+}
+.content .mywork .project {
+  padding: var(--space-m);
+  box-shadow: var(--shadow-small);
+  width: 100%; /* Ensure the image takes up the full width of its container */
+  max-width: 400px; /* Maximum width to maintain size */
+  overflow: hidden;
+}
+.content .mywork .project .project_image {
+  width: 100%;
+  max-height: 250px; /* Fixed height to ensure uniformity */
+  overflow: hidden;
+}
+.content .mywork .project .project_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+.content .mywork .project .project_card {
+  padding-top: var(--space-l);
+  padding-bottom: var(--space-s);
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 37.5rem) and (max-width: 64rem) {
+  .content .mywork {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+}
+@media (min-width: 64rem) {
+  .content .mywork {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
+  }
+}
+
+/* Tablets */
+/* Desktops */
+.about {
+  color: var(--color-text-header);
+  box-shadow: var(--shadow-large);
+  padding: var(--space-m);
+}
+.about .image_container {
+  position: relative;
+  overflow: hidden; /* Ensure the image stays within its container */
+  display: flex; /* Adjust as needed */
+  margin: var(--space-xl);
+}
+.about .image_container .header-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(1.4) translateY(5%); /* Zoom in the image */
+  transition: transform 5s ease;
+}
+.about .image_container h2 {
+  position: absolute;
+  bottom: var(--space-s); /* Adjust position as needed */
+  right: var(--space-s);
+  color: var(--color-white);
+  font-size: var(--font-size-xxxxl);
+}
+.about .aboutme_container {
+  padding-top: var(--space-s);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+.about .aboutme_container h2 {
+  color: var(--color-white);
+  text-align: center;
+  padding-top: var(--space-s);
+}
+.about .aboutme_container .social_connect {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-s);
+}
+@media (min-width: 37.5rem) and (max-width: 64rem) {
+  .about {
+    display: flex;
+    gap: var(--space-m);
+  }
+  .about .image_container {
+    max-width: 600px;
+    box-shadow: none;
+  }
+  .about .image_container .header-img {
+    z-index: 1;
+    transform: scale(1.2) translateY(22%); /* Zoom in the image */
+  }
+  .about .image_container h2 {
+    top: var(--space-s); /* Adjust position as needed */
+    right: var(--space-s);
+    color: var(--color-white);
+  }
+  .about .aboutme_container {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xl);
+    display: flex;
+    align-items: start;
+    gap: var(--space-s);
+  }
+  .about .aboutme_container h2 {
+    padding-top: var(--space-s);
+  }
+  .about .aboutme_container .social_connect {
+    display: none;
+  }
+}
+@media (min-width: 64rem) {
+  .about {
+    display: flex;
+    gap: var(--space-m);
+  }
+  .about .image_container {
+    box-shadow: none;
+    max-width: 500px;
+  }
+  .about .image_container .header-img {
+    z-index: 1;
+    transform: scale(1) translateY(20%); /* Zoom in the image */
+    transform-origin: top right;
+  }
+  .about .image_container h2 {
+    position: absolute;
+    top: var(--space-s); /* Adjust position as needed */
+    right: var(--space-s);
+    color: var(--color-white);
+    font-size: var(--font-size-xxxxl);
+  }
+  .about .aboutme_container {
+    padding-top: var(--space-xxxl);
+    padding-bottom: var(--space-xl);
+    display: flex;
+    align-items: start;
+    gap: var(--space-s);
+  }
+  .about .aboutme_container h2 {
+    padding-top: var(--space-s);
+  }
+  .about .aboutme_container .social_connect {
+    display: none;
+  }
+}
+
+.image__icon_social {
+  height: var(--space-l);
+  width: var(--space-l);
+}/*# sourceMappingURL=styles.css.map */
